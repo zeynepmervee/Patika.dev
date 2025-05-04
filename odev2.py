@@ -41,3 +41,80 @@ if len(isim) > 5:
     print("Uzun bir isminiz var.")
 else:
     print("İsminiz:", isim)
+
+
+# asal
+sayi = int(input("Bir sayı girin: "))
+if sayi > 1:
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            print("Asal değil")
+            break
+    else:
+        print("Asal")
+else:
+    print("Asal değil")
+
+sayi = int(input("Bir sayı girin: "))
+i = 2
+asal = True
+if sayi > 1:
+    while i < sayi:
+        if sayi % i == 0:
+            asal = False
+            break
+        i += 1
+    print("Asal" if asal else "Asal değil")
+else:
+    print("Asal değil")
+
+# index
+notlar = [45, 85, 75, 50]
+for i in range(len(notlar)):
+    if notlar[i] == 75:
+        print("75'in indeksi:", i)
+
+
+# faktoriyel
+sayi = int(input("Faktöriyeli alınacak sayı: "))
+faktoriyel = 1
+for i in range(1, sayi + 1):
+    faktoriyel *= i
+print("Faktöriyel:", faktoriyel)
+
+sayi = int(input("Faktöriyeli alınacak sayı: "))
+faktoriyel = 1
+i = 1
+while i <= sayi:
+    faktoriyel *= i
+    i += 1
+print("Faktöriyel:", faktoriyel)
+
+# pozitif gelene kadar for
+for _ in range(100):  # sonsuz gibi çalışır
+    sayi = int(input("Pozitif bir sayı girin: "))
+    if sayi > 0:
+        print("Tebrikler, pozitif sayı girdiniz:", sayi)
+        break
+
+# asal
+def asal_mi(sayi):
+    if sayi <= 1:
+        return False
+    for i in range(2, sayi):
+        if sayi % i == 0:
+            return False
+    return True
+
+sayi = int(input("Bir sayı girin: "))
+print("Asal" if asal_mi(sayi) else "Asal değil")
+
+# faktoriyel
+def faktoriyel(sayi):
+    sonuc = 1
+    for i in range(1, sayi + 1):
+        sonuc *= i
+    return sonuc
+
+sayi = int(input("Faktöriyeli alınacak sayı: "))
+print("Faktöriyel:", faktoriyel(sayi))
